@@ -1,9 +1,14 @@
 require("dotenv").config();
 
 const express=require("express")
-
-const app=express()
+const bodyParser = require("body-parser");
 require("./dbconnection")
+const userroutes=require("./routes/userroutes")
+const app=express()
+app.use(express.json())
+app.use(bodyParser.urlencoded({extended:true}))
+
+app.use("/api",userroutes)
 
 
 
@@ -14,11 +19,6 @@ require("./dbconnection")
 
 
 
-
-
-
-
-
-app.listen(7000,()=>{
+app.listen(3000,()=>{
     console.log("port 7000 hase been sucessfully runin ")
 })
