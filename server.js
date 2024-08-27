@@ -5,8 +5,8 @@ const bodyParser = require("body-parser");
 require("./dbconnection")
 const userroutes=require("./routes/userroutes")
 const app=express()
-app.use(express.json())
-app.use(bodyParser.urlencoded({extended:true}))
+// app.use(express.json())
+// app.use(bodyParser.urlencoded({extended:true}))
 
 app.use("/api",userroutes)
 
@@ -19,6 +19,6 @@ app.use("/api",userroutes)
 
 
 
-app.listen(3000,()=>{
-    console.log("port 7000 hase been sucessfully runin ")
-})
+app.listen(5000,()=>{
+    console.log("port 5000 hase been sucessfully runin ")
+})  

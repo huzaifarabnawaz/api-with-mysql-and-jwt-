@@ -11,7 +11,6 @@ const poolConfig = {
     databasename:DB_NAME,
     database: DB_NAME
 }
-console.log("🚀 ~ poolConfig:", poolConfig)
 
 const con = mysql.createPool(poolConfig)
 
