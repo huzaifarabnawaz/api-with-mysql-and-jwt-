@@ -23,6 +23,7 @@ const register = async (req, res) => {
             async (err, result) => {
 
                 if (err) {
+                    console.log(JSON.stringify(err))
 
                     return res.status(500).send({ msg: "Database error." });
         
@@ -39,9 +40,11 @@ const register = async (req, res) => {
 
 
 
+                
                 db.query(
-                    `INSERT INTO users (name, email, password,image) VALUES (${db.escape(req.body.name)}, ${db.escape(req.body.email)}, ${db.escape(hashedPassword)}, 'images/${req.file.filename}');`,
+                    `INSERT INTO users (name, email, password,images) VALUES (${db.escape(req.body.name)}, ${db.escape(req.body.email)}, ${db.escape(hashedPassword)}, 'images/${req.file.filename}');`,
                     (error, result) => {
+                        console.log(db.query)
                         if (error) {
                             console.log('Database insertion error')
                             console.log(error);
