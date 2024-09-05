@@ -1,7 +1,7 @@
 
 const express = require("express");
 const router = express.Router();
-const { signupvalidation } = require("../helpers/validation");
+const { signupvalidation,loginvalidation } = require("../helpers/validation");
 const usercontrols = require("../controllers/usercontroler");
 
 const path = require("path");
@@ -33,5 +33,7 @@ const upload = multer({
 
 
 router.post("/register", upload.single("images"), signupvalidation, usercontrols.register);
+router.post("/login", loginvalidation,usercontrols.login) // this method is not completed 
+
 
 module.exports = router;

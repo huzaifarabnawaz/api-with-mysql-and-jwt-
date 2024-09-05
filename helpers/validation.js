@@ -18,4 +18,16 @@ const signupvalidation =[
 ]
 
 
-module.exports={signupvalidation}
+const loginvalidation =[ 
+    check("email","email is requires").isEmail().normalizeEmail({gmail_remove_dots:true}),
+    check("password","password is requer").isLength({main:6}),
+
+]
+
+
+
+
+
+
+
+module.exports={signupvalidation,loginvalidation}
